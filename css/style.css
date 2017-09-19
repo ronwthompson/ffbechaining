@@ -1,0 +1,266 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+}
+
+.chars {
+	height: 200px;
+	width: 450px;
+	border: 2px solid black;
+	display: inline-block;
+	border-radius: 5px;
+	padding-top: 50px;
+	margin-bottom: 4px;
+}
+
+select {
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+input {
+	width: 50px;
+	margin-bottom: 10px;
+}
+
+.delays {
+	text-align: center;
+}
+
+#characters, #displayed {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#displayed {
+	height: 80px;
+	border: 1px solid black;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+#bottom {
+	height: 1px;
+	width: 900px;
+	border-bottom: 1px solid black;
+	position: absolute;
+	display: block;
+	top: 50px;
+	left: 50px;
+}
+
+.tall {
+	text-align: left;
+	height: 40px;
+	width: 1px;
+	border-left: 1px solid black;
+	display: block;
+	position: absolute;
+	top: 20px;
+}
+
+#start {
+	left: 50px;
+}
+
+#end {
+	right: 48px;
+}
+
+.short {
+	text-align: left;
+	height: 10px;
+	width: 1px;
+	border-left: 1px solid black;
+	display: block;
+	position: absolute;
+	top: 50px;
+}
+
+#second1 {
+	left: 140px;
+}
+
+#second2 {
+	left: 230px;
+}
+
+#second3 {
+	left: 320px;
+}
+
+#second4 {
+	left: 410px;
+}
+
+#second5 {
+	left: 500px;
+}
+
+#second6 {
+	left: 590px;
+}
+
+#second7 {
+	left: 680px;
+}
+
+#second8 {
+	left: 770px;
+}
+
+#second9 {
+	left: 860px;
+}
+
+.axisLabel {
+	font-size: 0.6em;
+	position: absolute;
+	display: block;
+	top: 60px;
+}
+
+#frame0 {
+	left: 35px;
+}
+
+#frame30 {
+	left: 120px;
+}
+
+#frame60 {
+	left: 215px;
+}
+
+#frame90 {
+	left: 305px;
+}
+
+#frame120 {
+	left: 395px;
+}
+
+#frame150 {
+	left: 485px;
+}
+
+#frame180 {
+	left: 575px;
+}
+
+#frame210 {
+	left: 665px;
+}
+
+#frame240 {
+	left: 755px;
+}
+
+#frame270 {
+	left: 845px;
+}
+
+#frame300 {
+	left: 935px;
+}
+
+.charStart {
+	text-align: left;
+	height: 30px;
+	width: 0px;
+	border-left: 1px solid black;
+	display: block;
+	position: absolute;
+	top: 20px;
+}
+
+.hits {
+	text-align: left;
+	height: 25px;
+	width: 3px;
+	border: 1px solid black;
+	display: block;
+	position: absolute;
+	top: 25px;
+}
+
+#char1 {
+	box-shadow: inset 0px 0px 20px 5px #e69f00;
+}
+
+#char2 {
+	box-shadow: inset 0px 0px 20px 5px #0072b2;
+}
+
+#char3 {
+	box-shadow: inset 0px 0px 20px 5px #cc79a7;
+}
+
+#char4 {
+	box-shadow: inset 0px 0px 20px 5px #f0e442;
+}
+
+#char5 {
+	box-shadow: inset 0px 0px 20px 5px #009e73;
+}
+
+#friend {
+	box-shadow: inset 0px 0px 20px 5px #000000;
+}
+
+.char1 {
+	border-color: #e69f00;
+	background-color: #e69f00;
+}
+
+.char2 {
+	border-color: #0072b2;
+	background-color: #0072b2;
+}
+
+.char3 {
+	border-color: #cc79a7;
+	background-color: #cc79a7;
+}
+
+.char4 {
+	border-color: #f0e442;
+	background-color: #f0e442;
+}
+
+.char5 {
+	border-color: #009e73;
+	background-color: #009e73;
+}
+
+.friend {
+	border-color: #000000;
+	background-color: #000000;
+}
+
+.chains {
+	text-align: left;
+	height: 15px;
+	width: 75px; /* must be 3x max delay for chain, js function calcMaxChain let maxDelay */
+	display: block;
+	position: absolute;
+	top: 35px;
+}
+
+#macros {
+	width: 1000px;
+	height: 400px;
+	margin-top: 10px;
+}
+
+#maxChain {
+	width: 250px;
+	border: 1px solid black;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
