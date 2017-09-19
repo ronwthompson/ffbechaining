@@ -6,6 +6,9 @@
 
 body {
 	text-align: center;
+	font-family: 'Droid Sans', sans-serif;
+	line-height: 1;
+	font-size: 0.9em;
 }
 
 .chars {
@@ -14,8 +17,13 @@ body {
 	border: 2px solid black;
 	display: inline-block;
 	border-radius: 5px;
-	padding-top: 50px;
+	padding-top: 35px;
 	margin-bottom: 4px;
+}
+
+.col-7 {
+	padding-left: 30px;
+	padding-right: 0;
 }
 
 select {
@@ -246,7 +254,7 @@ input {
 .chains {
 	text-align: left;
 	height: 15px;
-	width: 75px; /* must be 3x max delay for chain, js function calcMaxChain let maxDelay */
+	width: 60px; /* must be 3x max delay for chain, js function calcMaxChain let maxDelay */
 	display: block;
 	position: absolute;
 	top: 35px;
@@ -263,4 +271,29 @@ input {
 	border: 1px solid black;
 	margin: 0 auto;
 	margin-bottom: 10px;
+}
+
+.macroButton {
+	width: 170px;
+}
+
+#macroHeight, #macroWidth, #widthSpan, #heightSpan {
+	width: 50px;
+	text-align: center;
+	margin: 0;
+}
+
+#widthSpan, #heightSpan {
+	display: inline-block;
+	font-size: 0.7em;
+}
+
+.row p {
+	display: inline;
+}
+
+.skillTitle {
+	display: inline;
+	font-weight: 700;
+	text-decoration: underline;
 }

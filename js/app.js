@@ -1,45 +1,25 @@
+let libraryChar = ['char1','char2','char3','char4','char5','friend']
+
 //upon character select, create ability dropdown list
-document.getElementById('char1Select').onchange = function () {
-	clearCharChain(this.parentElement.id);
-	clearInfo(this.parentElement.id);
-	calcMaxChain();
-	charDropDown(this.parentElement.id, this.value);
-	removeOld(this.parentElement.id);
-}
+var char1Select = document.getElementById('char1Select')
+char1Select.onchange = makeDropDown.bind(char1Select)
 
-document.getElementById('char2Select').onchange = function () {
-	clearCharChain(this.parentElement.id);
-	clearInfo(this.parentElement.id);
-	calcMaxChain();
-	charDropDown(this.parentElement.id, this.value);
-	removeOld(this.parentElement.id);
-}
+var char2Select = document.getElementById('char2Select')
+char2Select.onchange = makeDropDown.bind(char2Select)
 
-document.getElementById('char3Select').onchange = function () {
-	clearCharChain(this.parentElement.id);
-	clearInfo(this.parentElement.id);
-	calcMaxChain();
-	charDropDown(this.parentElement.id, this.value);
-	removeOld(this.parentElement.id);
-}
+var char3Select = document.getElementById('char3Select')
+char3Select.onchange = makeDropDown.bind(char3Select)
 
-document.getElementById('char4Select').onchange = function () {
-	clearCharChain(this.parentElement.id);
-	clearInfo(this.parentElement.id);
-	calcMaxChain();
-	charDropDown(this.parentElement.id, this.value);
-	removeOld(this.parentElement.id);
-}
+var char4Select = document.getElementById('char4Select')
+char4Select.onchange = makeDropDown.bind(char4Select)
 
-document.getElementById('char5Select').onchange = function () {
-	clearCharChain(this.parentElement.id);
-	clearInfo(this.parentElement.id);
-	calcMaxChain();
-	charDropDown(this.parentElement.id, this.value);
-	removeOld(this.parentElement.id);
-}
+var char5Select = document.getElementById('char5Select')
+char5Select.onchange = makeDropDown.bind(char5Select)
 
-document.getElementById('friendSelect').onchange = function () {
+var friendSelect = document.getElementById('friendSelect')
+friendSelect.onchange = makeDropDown.bind(friendSelect)
+
+function makeDropDown(){
 	clearCharChain(this.parentElement.id);
 	clearInfo(this.parentElement.id);
 	calcMaxChain();
@@ -55,7 +35,7 @@ function charDropDown(name, char) {
 	document.getElementById(name+'Ability').innerHTML = html2Insert;
 }
 
-function removeOld(name) {
+function removeOld(name) { //removes visualization markers of a char
 	let elements = document.getElementsByClassName(name);
 	while (elements.length > 0) {
 		elements[0].parentNode.removeChild(elements[0]);
@@ -63,84 +43,55 @@ function removeOld(name) {
 }
 
 //create visualization based off of ability selected
-document.getElementById('char1Ability').onchange = function () {
+var char1Ability = document.getElementById('char1Ability')
+char1Ability.onchange = abilityChange.bind(char1Ability)
+
+var char2Ability = document.getElementById('char2Ability')
+char2Ability.onchange = abilityChange.bind(char2Ability)
+
+
+var char3Ability = document.getElementById('char3Ability')
+char3Ability.onchange = abilityChange.bind(char3Ability)
+
+
+var char4Ability = document.getElementById('char4Ability')
+char4Ability.onchange = abilityChange.bind(char4Ability)
+
+
+var char5Ability = document.getElementById('char5Ability')
+char5Ability.onchange = abilityChange.bind(char5Ability)
+
+
+var friendAbility = document.getElementById('friendAbility')
+friendAbility.onchange = abilityChange.bind(friendAbility)
+
+
+function abilityChange(){
 	removeOld(this.parentElement.id);
 	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
 	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
 }
 
-document.getElementById('char2Ability').onchange = function () {
-	removeOld(this.parentElement.id);
-	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-}
+var char1Dual = document.getElementById('char1Dual')
+char1Dual.onchange = dualChange.bind(char1Dual)
 
-document.getElementById('char3Ability').onchange = function () {
-	removeOld(this.parentElement.id);
-	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-}
+var char2Dual = document.getElementById('char2Dual')
+char2Dual.onchange = dualChange.bind(char2Dual)
 
-document.getElementById('char4Ability').onchange = function () {
-	removeOld(this.parentElement.id);
-	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-}
+var char3Dual = document.getElementById('char3Dual')
+char3Dual.onchange = dualChange.bind(char3Dual)
 
-document.getElementById('char5Ability').onchange = function () {
-	removeOld(this.parentElement.id);
-	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-}
+var char4Dual = document.getElementById('char4Dual')
+char4Dual.onchange = dualChange.bind(char4Dual)
 
-document.getElementById('friendAbility').onchange = function () {
-	removeOld(this.parentElement.id);
-	infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-	visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,this.value);
-}
+var char5Dual = document.getElementById('char5Dual')
+char5Dual.onchange = dualChange.bind(char5Dual)
 
-document.getElementById('char1Dual').onchange = function () {
-	if (document.getElementById('char1Ability').value != ''){
-		removeOld(this.parentElement.id);
-		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-	}
-}
+var friendDual = document.getElementById('friendDual')
+friendDual.onchange = dualChange.bind(friendDual)
 
-document.getElementById('char2Dual').onchange = function () {
-	if (document.getElementById('char2Ability').value != ''){
-		removeOld(this.parentElement.id);
-		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-	}
-}
-
-document.getElementById('char3Dual').onchange = function () {
-	if (document.getElementById('char3Ability').value != ''){
-		removeOld(this.parentElement.id);
-		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-	}
-}
-
-document.getElementById('char4Dual').onchange = function () {
-	if (document.getElementById('char4Ability').value != ''){
-		removeOld(this.parentElement.id);
-		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-	}
-}
-
-document.getElementById('char5Dual').onchange = function () {
-	if (document.getElementById('char5Ability').value != ''){
-		removeOld(this.parentElement.id);
-		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
-	}
-}
-
-document.getElementById('friendDual').onchange = function () {
-	if (document.getElementById('friendAbility').value != ''){
+function dualChange(){
+	if (document.getElementById(this.parentElement.id+'Ability').value != ''){
 		removeOld(this.parentElement.id);
 		infoGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
 		visGen(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value);
@@ -159,8 +110,9 @@ function infoGen(name, char, abil) { //finds and displays ability information
 	document.getElementById(name+'Info').innerHTML = html2Insert;
 }
 
-function clearInfo(name) { //clears number of hits
+function clearInfo(name) { //clears number of hits and frame data
 	document.getElementById(name+'Info').innerHTML = '0';
+	document.getElementById(name+'Data').innerHTML = 'None Selected'
 }
 
 function visGen(name, char, abil) { //generate vertical visualization markers
@@ -182,13 +134,14 @@ var maxChainArray = [];
 var maxChain = 0;
 
 function visPos(name, char, abil, totalGen) { //align visualization markers on timeline
-	let startPos = parseInt(document.getElementById(name+'Delay').value); //user input frame delay
-	let startPos2 = startPos; //if the char is dual weilding, create separate start delay
+	document.getElementById(name+'Data').innerHTML = characters[char][abil][1] //add frame data display
+	let startPos = parseInt(document.getElementById(name+'Delay').value) //user input frame delay
 	clearCharChain(name);
 	document.getElementById(name+'Start').style.left = (startPos*3)+50+'px'; //multiply by 3 because 3 px for each frame, add 50 for offset
+	startPos += characters[char][abil][2];	
+	let startPos2 = startPos; //create separate start delay for dual weild
 	if (document.getElementById(name+'Dual').checked) {
-		startPos += characters[char][abil][2];
-		startPos2 += (characters[char][abil][2] * 2) + (characters[char][abil][4]);
+		startPos2 += (characters[char][abil][2]) + (characters[char][abil][4]); //add casting delay and dual weild delay
 	}
 	for (let i = 0; i < totalGen; i++) {
 		if (i < characters[char][abil][0]){
@@ -221,7 +174,7 @@ function clearCharChain (name) { //removes a characters hits from the chain arra
 function calcMaxChain () {
 	maxChain = 0;
 	let tempMax = 0;
-	let maxDelay = 25; //number of frames that will still chain (if you change, change css style [.chains width] as well)
+	let maxDelay = 20; //number of frames that will still chain (if you change, change css style [.chains width] as well)
 	maxChainArray.sort(function(a, b) {
 		if(a[0] === b[0]){ //if frame # is same, sort by char (prevents chain breaking from spark chains)
 	        return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0;
@@ -246,242 +199,157 @@ function calcMaxChain () {
 }
 
 //delay button listeners
-document.getElementById('char1Up').onclick = function () {
-	document.getElementById('char1Delay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char1Up = document.getElementById('char1Up')
+char1Up.onclick = delayModification.bind(char1Up)
 
-document.getElementById('char2Up').onclick = function () {
-	document.getElementById('char2Delay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char2Up = document.getElementById('char2Up')
+char2Up.onclick = delayModification.bind(char2Up)
 
-document.getElementById('char3Up').onclick = function () {
-	document.getElementById('char3Delay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char3Up = document.getElementById('char3Up')
+char3Up.onclick = delayModification.bind(char3Up)
 
-document.getElementById('char4Up').onclick = function () {
-	document.getElementById('char4Delay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char4Up = document.getElementById('char4Up')
+char4Up.onclick = delayModification.bind(char4Up)
 
-document.getElementById('char5Up').onclick = function () {
-	document.getElementById('char5Delay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char5Up = document.getElementById('char5Up')
+char5Up.onclick = delayModification.bind(char5Up)
 
-document.getElementById('friendUp').onclick = function () {
-	document.getElementById('friendDelay').value++;
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var friendUp = document.getElementById('friendUp')
+friendUp.onclick = delayModification.bind(friendUp)
 
-document.getElementById('char1Up10').onclick = function () {
-	document.getElementById('char1Delay').value = 10 + parseInt(document.getElementById('char1Delay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char1Up10 = document.getElementById('char1Up10')
+char1Up10.onclick = delayModification.bind(char1Up10)
 
-document.getElementById('char2Up10').onclick = function () {
-	document.getElementById('char2Delay').value = 10 + parseInt(document.getElementById('char2Delay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char2Up10 = document.getElementById('char2Up10')
+char2Up10.onclick = delayModification.bind(char2Up10)
 
-document.getElementById('char3Up10').onclick = function () {
-	document.getElementById('char3Delay').value = 10 + parseInt(document.getElementById('char3Delay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char3Up10 = document.getElementById('char3Up10')
+char3Up10.onclick = delayModification.bind(char3Up10)
 
-document.getElementById('char4Up10').onclick = function () {
-	document.getElementById('char4Delay').value = 10 + parseInt(document.getElementById('char4Delay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char4Up10 = document.getElementById('char4Up10')
+char4Up10.onclick = delayModification.bind(char4Up10)
 
-document.getElementById('char5Up10').onclick = function () {
-	document.getElementById('char5Delay').value = 10 + parseInt(document.getElementById('char5Delay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var char5Up10 = document.getElementById('char5Up10')
+char5Up10.onclick = delayModification.bind(char5Up10)
 
-document.getElementById('friendUp10').onclick = function () {
-	document.getElementById('friendDelay').value = 10 + parseInt(document.getElementById('friendDelay').value);
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
+var friendUp10 = document.getElementById('friendUp10')
+friendUp10.onclick = delayModification.bind(friendUp10)
 
-document.getElementById('char1Down').onclick = function () {
-	if (document.getElementById('char1Delay').value > 0){
-		document.getElementById('char1Delay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var char1Down = document.getElementById('char1Down')
+char1Down.onclick = delayModification.bind(char1Down)
 
-document.getElementById('char2Down').onclick = function () {
-	if (document.getElementById('char2Delay').value > 0){
-		document.getElementById('char2Delay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var char2Down = document.getElementById('char2Down')
+char2Down.onclick = delayModification.bind(char2Down)
 
-document.getElementById('char3Down').onclick = function () {
-	if (document.getElementById('char3Delay').value > 0){
-		document.getElementById('char3Delay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var char3Down = document.getElementById('char3Down')
+char3Down.onclick = delayModification.bind(char3Down)
 
-document.getElementById('char4Down').onclick = function () {
-	if (document.getElementById('char4Delay').value > 0){
-		document.getElementById('char4Delay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var char4Down = document.getElementById('char4Down')
+char4Down.onclick = delayModification.bind(char4Down)
 
-document.getElementById('char5Down').onclick = function () {
-	if (document.getElementById('char5Delay').value > 0){
-		document.getElementById('char5Delay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var char5Down = document.getElementById('char5Down')
+char5Down.onclick = delayModification.bind(char5Down)
 
-document.getElementById('friendDown').onclick = function () {
-	if (document.getElementById('friendDelay').value > 0){
-		document.getElementById('friendDelay').value--;
-		if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-			visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-		}
-	}
-}
+var friendDown = document.getElementById('friendDown')
+friendDown.onclick = delayModification.bind(friendDown)
 
-document.getElementById('char1Down10').onclick = function () {
-	if (document.getElementById('char1Delay').value > 9){
-		document.getElementById('char1Delay').value = parseInt(document.getElementById('char1Delay').value) - 10;
-	} else {
-		document.getElementById('char1Delay').value = 0;
+var char1Down10 = document.getElementById('char1Down10')
+char1Down10.onclick = delayModification.bind(char1Down10)
+
+var char2Down10 = document.getElementById('char2Down10')
+char2Down10.onclick = delayModification.bind(char2Down10)
+
+var char3Down10 = document.getElementById('char3Down10')
+char3Down10.onclick = delayModification.bind(char3Down10)
+
+var char4Down10 = document.getElementById('char4Down10')
+char4Down10.onclick = delayModification.bind(char4Down10)
+
+var char5Down10 = document.getElementById('char5Down10')
+char5Down10.onclick = delayModification.bind(char5Down10)
+
+var friendDown10 = document.getElementById('friendDown10')
+friendDown10.onclick = delayModification.bind(friendDown10)
+
+function delayModification (){
+	switch(this.id.slice(-2)){
+		case 'Up':
+			document.getElementById(this.parentElement.id+'Delay').value++
+			break
+		case '10':
+			if (this.id.slice(-3) == 'p10'){
+				document.getElementById(this.parentElement.id+'Delay').value = 10 + parseInt(document.getElementById(this.parentElement.id+'Delay').value)
+			} else if (this.id.slice(-3) == 'n10'){
+				if (document.getElementById(this.parentElement.id+'Delay').value > 9){
+					document.getElementById(this.parentElement.id+'Delay').value = parseInt(document.getElementById(this.parentElement.id+'Delay').value) - 10;
+				} else {
+					document.getElementById(this.parentElement.id+'Delay').value = 0;
+				}
+			}
+			break
+		case 'wn':
+			if (document.getElementById(this.parentElement.id+'Delay').value > 0){
+				document.getElementById(this.parentElement.id+'Delay').value--
+			}
+			break
 	}
 	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
 		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
 	}
 }
 
-document.getElementById('char2Down10').onclick = function () {
-	if (document.getElementById('char2Delay').value > 9){
-		document.getElementById('char2Delay').value = parseInt(document.getElementById('char2Delay').value) - 10;
-	} else {
-		document.getElementById('char2Delay').value = 0;
+document.getElementById('clearAll').onclick = function(){ //clears all selections, hits, delays, and chains
+	for (let i = 0; i < libraryChar.length; i++){
+		document.getElementById(libraryChar[i]+'Select').value = ''
+		document.getElementById(libraryChar[i]+'Ability').innerHTML = ''
+		document.getElementById(libraryChar[i]+'Delay').value = 0
+		document.getElementById(libraryChar[i]+'Dual').checked = false
+		clearCharChain(libraryChar[i]);
+		clearInfo(libraryChar[i]);
+		removeOld(libraryChar[i]);
 	}
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
-
-document.getElementById('char3Down10').onclick = function () {
-	if (document.getElementById('char3Delay').value > 9){
-		document.getElementById('char3Delay').value = parseInt(document.getElementById('char3Delay').value) - 10;
-	} else {
-		document.getElementById('char3Delay').value = 0;
-	}
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
-
-document.getElementById('char4Down10').onclick = function () {
-	if (document.getElementById('char4Delay').value > 9){
-		document.getElementById('char4Delay').value = parseInt(document.getElementById('char4Delay').value) - 10;
-	} else {
-		document.getElementById('char4Delay').value = 0;
-	}
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
-
-document.getElementById('char5Down10').onclick = function () {
-	if (document.getElementById('char5Delay').value > 9){
-		document.getElementById('char5Delay').value = parseInt(document.getElementById('char5Delay').value) - 10;
-	} else {
-		document.getElementById('char5Delay').value = 0;
-	}
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
-}
-
-document.getElementById('friendDown10').onclick = function () {
-	if (document.getElementById('friendDelay').value > 9){
-		document.getElementById('friendDelay').value = parseInt(document.getElementById('friendDelay').value) - 10;
-	} else {
-		document.getElementById('friendDelay').value = 0;
-	}
-	if (document.getElementById(this.parentElement.id+'Ability').value.length > 0) {
-		visPos(this.parentElement.id, document.getElementById(this.parentElement.id+'Select').value,document.getElementById(this.parentElement.id+'Ability').value, document.getElementById(this.parentElement.id+'Info').innerHTML);
-	}
+	calcMaxChain();
 }
 
 function generateMemu () {
+	let width = document.getElementById('macroWidth').value
+	let height = document.getElementById('macroHeight').value
+	let col1 = 0.2778 //char1 = col2,row1
+	let col2 = 0.7639 //char2 = col1,row1
+	let row1 = 0.6625 //char3 = col2,row2
+	let row2 = 0.7617 //char4 = col1,row2
+	let row3 = 0.8594 //char5 = col2,row3 (friend = col1, row3)
 	document.getElementById('macros').value = '';
 	let memu = [];
 	if (document.getElementById('char1Ability').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('char1Delay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:848:550');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row1)+':'+Math.floor(height*col2));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	if (document.getElementById('char2Ability').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('char2Delay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:848:200');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row1)+':'+Math.floor(height*col1));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	if (document.getElementById('char3Ability').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('char3Delay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:975:550');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row2)+':'+Math.floor(height*col2));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	if (document.getElementById('char4Ability').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('char4Delay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:975:200');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row2)+':'+Math.floor(height*col1));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	if (document.getElementById('char5Ability').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('char5Delay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:1100:550');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row3)+':'+Math.floor(height*col2));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	if (document.getElementById('friendAbility').value != ''){
 		let charFinalDelay = 100000 + Math.floor(document.getElementById('friendDelay').value*33333.33333);
-		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:1100:200');
-		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:720');
+		memu.push(charFinalDelay.toString()+'--VINPUT--MULTI:1:0:'+Math.floor(width*row3)+':'+Math.floor(height*col1));
+		memu.push((charFinalDelay+10000).toString()+'--VINPUT--MULTI:1:1:0:'+height);
 	}
 	memu = memu.sort();
 	for (let i = 0; i < memu.length; i++) {
@@ -491,6 +359,13 @@ function generateMemu () {
 
 function generateNox () {
 	document.getElementById('macros').value = '';
+	let width = document.getElementById('macroWidth').value
+	let height = document.getElementById('macroHeight').value
+	let col1 = 0.2778 //char1 = col2,row1
+	let col2 = 0.7639 //char2 = col1,row1
+	let row1 = 0.6625 //char3 = col2,row2
+	let row2 = 0.7617 //char4 = col1,row2
+	let row3 = 0.8594 //char5 = col2,row3 (friend = col1, row3)
 	let nox = [];
 	if (document.getElementById('char1Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char1Delay').value*33.33333);
