@@ -4,7 +4,7 @@ Chaining attacks in FFBE is difficult to visualize due to the inconsistent amoun
 
 ![screenshot](https://github.com/ronwthompson/ffbechaining/blob/master/screenshot.png)
 
-## Getting Started
+## Getting Started - Installation Instructions
 
 This webapp is standalone and requires no installation.  Please see the [live demo](http://ronwthompson.com/ffbechaining/index.html) to get started.
 
