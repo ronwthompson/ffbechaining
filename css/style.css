@@ -297,3 +297,18 @@ input {
 	font-weight: 700;
 	text-decoration: underline;
 }
+
+#saveLoad {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 160px;
+}
+
+#saveLoad button{
+	margin-top: 5px;
+}
+
+#hashCode {
+	margin-top: 5px;
+}
