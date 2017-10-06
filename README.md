@@ -2,6 +2,8 @@
 
 Chaining attacks in FFBE is difficult to visualize due to the inconsistent amount of time between attacks for each character.  Additionally, it can be nearly impossible to perform a good chain consistently.  This tool will help you build a long chain and when you find a great combination of attacks, you can save the attack in your localStorage or generate a macro to use with an Android emulator.
 
+[screenshot](https://github.com/ronwthompson/ffbechaining/blob/master/screenshot.png)
+
 ## Getting Started
 
 This webapp is standalone and requires no installation.  Please see the [live demo](http://ronwthompson.com/ffbechaining/index.html) to get started.
