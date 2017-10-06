@@ -11,6 +11,10 @@
 
 let characters = {
   "": {},
+  "Equipment Abilities": {
+    "": [],
+    "Pod 153 - R020:Mirage": [8, [42,10,10,10,10,10,10,10], 16, 0, 40]
+  },
   "21O": {
     "": [],
     "R010: Lazer": [

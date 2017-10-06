@@ -157,15 +157,16 @@ function visPos(name, char, abil, totalGen) { //align visualization markers on t
 			document.getElementById(name+'Hit'+(i+1)).style.zIndex = (startPos2*3)+50;
 			document.getElementById(name+'Chain'+(i+1)).style.left = (startPos2*3)+50+'px';
 			document.getElementById(name+'Chain'+(i+1)).style.zIndex = (startPos2*3)+50;
-			maxChainArray.push([startPos2, name]);
+			maxChainArray.push([startPos2, name+'-2']);
 		}
 	}
+	//console.log(maxChainArray)
 	calcMaxChain();
 }
 
 function clearCharChain (name) { //removes a characters hits from the chain array so they aren't counted towards the max chain
 	for (let i = maxChainArray.length-1; i >= 0; i--) {
-		if (maxChainArray[i][1] == name) {
+		if (maxChainArray[i][1] == name || maxChainArray[i][1] == name+'-2') {
 			maxChainArray.splice(i, 1);
 		}
 	}
@@ -369,43 +370,103 @@ function generateNox () {
 	let nox = [];
 	if (document.getElementById('char1Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char1Delay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:848:550ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col2)+':'+Math.floor(width*row1)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
 	if (document.getElementById('char2Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char2Delay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:848:200ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col1)+':'+Math.floor(width*row1)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
 	if (document.getElementById('char3Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char3Delay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:975:550ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col2)+':'+Math.floor(width*row2)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
 	if (document.getElementById('char4Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char4Delay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:975:200ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col1)+':'+Math.floor(width*row2)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
 	if (document.getElementById('char5Ability').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('char5Delay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:1100:550ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col2)+':'+Math.floor(width*row3)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
 	if (document.getElementById('friendAbility').value != ''){
 		let charFinalDelay = 100 + Math.floor(document.getElementById('friendDelay').value*33.33333);
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:1:0:1100:200ScRiPtSePaRaToR'+charFinalDelay.toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
-		nox.push('0ScRiPtSePaRaToR720|1280|MSBRL:1337814:-1072938ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:1:0:'+Math.floor(height*col1)+':'+Math.floor(width*row3)+'ScRiPtSePaRaToR'+charFinalDelay.toString());
+		nox.push('0ScRiPtSePaRaToR'+height+'|'+width+'|MULTI:0:6ScRiPtSePaRaToR'+(charFinalDelay+1).toString());
 	}
+	nox.sort(function (a, b) {
+	    return (Number(a.match(/\d+$/g)) - Number((b.match(/\d+$/g))));
+	})
 	for (let i = 0; i < nox.length; i++) {
 		document.getElementById('macros').value += nox[i]+'\n';
 	}
-	//need to sort by timestamp
-	//can timestamps be 4 digits all the time?  dunno, nox sucks
 }
+
+function generateHashCode(){
+	let codeToHash = ''
+	codeToHash += char1Select.value+'!'+char1Ability.value+'!'+char1Delay.value+'!'+char1Dual.checked+'!'
+	codeToHash += char2Select.value+'!'+char2Ability.value+'!'+char2Delay.value+'!'+char2Dual.checked+'!'
+	codeToHash += char3Select.value+'!'+char3Ability.value+'!'+char3Delay.value+'!'+char3Dual.checked+'!'
+	codeToHash += char4Select.value+'!'+char4Ability.value+'!'+char4Delay.value+'!'+char4Dual.checked+'!'
+	codeToHash += char5Select.value+'!'+char5Ability.value+'!'+char5Delay.value+'!'+char5Dual.checked+'!'
+	codeToHash += friendSelect.value+'!'+friendAbility.value+'!'+friendDelay.value+'!'+friendDual.checked
+	document.getElementById('hashCode').value = btoa(codeToHash)
+}
+
+function loadHashCode(){
+	let decodedHash = atob(document.getElementById('hashCode').value)
+	let decodedArray = []
+	let tempValue = ''
+	for (let i = 0; i < decodedHash.length; i++){
+		if (decodedHash[i] == '!'){
+			decodedArray.push(tempValue)
+			tempValue = ''
+		} else {
+			tempValue += decodedHash[i]
+		}
+	}
+	char1Select.value = decodedArray[0]
+	makeDropDown.bind(char1Select)()
+	char1Delay.value = decodedArray[2]
+	char1Dual.checked = decodedArray[3]
+	char2Select.value = decodedArray[4]
+	makeDropDown.bind(char2Select)()
+	char2Delay.value = decodedArray[6]
+	char2Dual.checked = decodedArray[7]
+	char3Select.value = decodedArray[8]
+	makeDropDown.bind(char3Select)()
+	char3Delay.value = decodedArray[10]
+	char3Dual.checked = decodedArray[11]
+	char4Select.value = decodedArray[12]
+	makeDropDown.bind(char4Select)()
+	char4Delay.value = decodedArray[14]
+	char4Dual.checked = decodedArray[15]
+	char5Select.value = decodedArray[16]
+	makeDropDown.bind(char5Select)()
+	char5Delay.value = decodedArray[18]
+	char5Dual.checked = decodedArray[19]
+	friendSelect.value = decodedArray[20]
+	makeDropDown.bind(friendSelect)()
+	friendDelay.value = decodedArray[22]
+	friendDual.checked = decodedArray[23]
+
+	char1Ability.value = decodedArray[1]
+	char2Ability.value = decodedArray[5]
+	char3Ability.value = decodedArray[9]
+	char4Ability.value = decodedArray[13]
+	char5Ability.value = decodedArray[17]
+	friendAbility.value = decodedArray[21]
+
+	abilityChange.bind(char1Ability)()
+	abilityChange.bind(char2Ability)()
+	abilityChange.bind(char3Ability)()
+	abilityChange.bind(char4Ability)()
+	abilityChange.bind(char5Ability)()
+	abilityChange.bind(friendAbility)()
+}
+
+//T3JsYW5kZWF1IURpdmluZSBSdWluYXRpb24hMTAhdHJ1ZSFWZXJpdGFzIG9mIHRoZSBEYXJrIURhcmsgUHVuaXNobWVudCExMyF0cnVlIU9uaW9uIEtuaWdodCFPbmlvbiBTbGljZSEzMCF0cnVlIUdpbGdhbWVzaCFUcmktQXR0YWNrITUwIXRydWUhQ3VwaWQgTHVuYSFDaGFpbnNhdyE0MCF0cnVlIUVkZ2FyIUNoYWluc2F3ITQ1IXRydWU=
