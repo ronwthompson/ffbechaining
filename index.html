@@ -14,96 +14,102 @@
 <h1>FFBE Chain Visualizer and Macro Creator</h1>
 
 <div class='container-fluid' id='characters'>
-<div class='chars' id='char1'>
-Character:<select id='char1Select'></select>
-Ability:<select id='char1Ability'></select><br>
-Frame Delay:<button id='char1Down10'>↓ 10</button><button id='char1Down'>↓ 1</button><input type='text' value='0' class='delays' id='char1Delay' readonly><button id='char1Up'>↑ 1</button><button id='char1Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char1Dual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='char1Info'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='char1Data'>None Selected</p></div>
+    <div class='chars' id='char1'>
+        Character:<select id='char1Select'></select>
+        Ability:<select id='char1Ability'></select><br>
+        Frame Delay:<button id='char1Down10'>↓ 10</button><button id='char1Down'>↓ 1</button><input type='text' value='0' class='delays' id='char1Delay' readonly><button id='char1Up'>↑ 1</button><button id='char1Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char1Dual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='char1Info'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='char1Data'>None Selected</p></div>
+    </div>
+
+    <div class='chars' id='char2'>
+        Character:<select id='char2Select'></select>
+        Ability:<select id='char2Ability'></select><br>
+        Frame Delay:<button id='char2Down10'>↓ 10</button><button id='char2Down'>↓ 1</button><input type='text' value='0' class='delays' id='char2Delay' readonly><button id='char2Up'>↑ 1</button><button id='char2Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char2Dual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='char2Info'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='char2Data'>None Selected</p></div>
+    </div>
+
+    <div class='chars' id='char3'>
+        Character:<select id='char3Select'></select>
+        Ability:<select id='char3Ability'></select><br>
+        Frame Delay:<button id='char3Down10'>↓ 10</button><button id='char3Down'>↓ 1</button><input type='text' value='0' class='delays' id='char3Delay' readonly><button id='char3Up'>↑ 1</button><button id='char3Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char3Dual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='char3Info'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='char3Data'>None Selected</p></div>
+    </div>
+
+    <div class='chars' id='char4'>
+        Character:<select id='char4Select'></select>
+        Ability:<select id='char4Ability'></select><br>
+        Frame Delay:<button id='char4Down10'>↓ 10</button><button id='char4Down'>↓ 1</button><input type='text' value='0' class='delays' id='char4Delay' readonly><button id='char4Up'>↑ 1</button><button id='char4Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char4Dual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='char4Info'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='char4Data'>None Selected</p></div>
+    </div>
+
+    <div class='chars' id='char5'>
+        Character:<select id='char5Select'></select>
+        Ability:<select id='char5Ability'></select><br>
+        Frame Delay:<button id='char5Down10'>↓ 10</button><button id='char5Down'>↓ 1</button><input type='text' value='0' class='delays' id='char5Delay' readonly><button id='char5Up'>↑ 1</button><button id='char5Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char5Dual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='char5Info'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='char5Data'>None Selected</p></div>
+    </div>
+
+    <div class='chars' id='friend'>
+        Character:<select id='friendSelect'></select>
+        Ability:<select id='friendAbility'></select><br>
+        Frame Delay:<button id='friendDown10'>↓ 10</button><button id='friendDown'>↓ 1</button><input type='text' value='0' class='delays' id='friendDelay' readonly><button id='friendUp'>↑ 1</button><button id='friendUp10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='friendDual'>
+        <div><p class='skillTitle'>Total # of Hits:</p> <p id='friendInfo'>0</p></div>
+        <div><p class='skillTitle'>Skill Frame Data:</p> <p id='friendData'>None Selected</p></div>
+    </div>
 </div>
 
-<div class='chars' id='char2'>
-Character:<select id='char2Select'></select>
-Ability:<select id='char2Ability'></select><br>
-Frame Delay:<button id='char2Down10'>↓ 10</button><button id='char2Down'>↓ 1</button><input type='text' value='0' class='delays' id='char2Delay' readonly><button id='char2Up'>↑ 1</button><button id='char2Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char2Dual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='char2Info'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='char2Data'>None Selected</p></div>
-</div>
-
-<div class='chars' id='char3'>
-Character:<select id='char3Select'></select>
-Ability:<select id='char3Ability'></select><br>
-Frame Delay:<button id='char3Down10'>↓ 10</button><button id='char3Down'>↓ 1</button><input type='text' value='0' class='delays' id='char3Delay' readonly><button id='char3Up'>↑ 1</button><button id='char3Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char3Dual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='char3Info'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='char3Data'>None Selected</p></div>
-</div>
-
-<div class='chars' id='char4'>
-Character:<select id='char4Select'></select>
-Ability:<select id='char4Ability'></select><br>
-Frame Delay:<button id='char4Down10'>↓ 10</button><button id='char4Down'>↓ 1</button><input type='text' value='0' class='delays' id='char4Delay' readonly><button id='char4Up'>↑ 1</button><button id='char4Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char4Dual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='char4Info'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='char4Data'>None Selected</p></div>
-</div>
-
-<div class='chars' id='char5'>
-Character:<select id='char5Select'></select>
-Ability:<select id='char5Ability'></select><br>
-Frame Delay:<button id='char5Down10'>↓ 10</button><button id='char5Down'>↓ 1</button><input type='text' value='0' class='delays' id='char5Delay' readonly><button id='char5Up'>↑ 1</button><button id='char5Up10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='char5Dual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='char5Info'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='char5Data'>None Selected</p></div>
-</div>
-
-<div class='chars' id='friend'>
-Character:<select id='friendSelect'></select>
-Ability:<select id='friendAbility'></select><br>
-Frame Delay:<button id='friendDown10'>↓ 10</button><button id='friendDown'>↓ 1</button><input type='text' value='0' class='delays' id='friendDelay' readonly><button id='friendUp'>↑ 1</button><button id='friendUp10'>↑ 10</button> Dual Wield/Cast:<input type='checkbox' id='friendDual'>
-<div><p class='skillTitle'>Total # of Hits:</p> <p id='friendInfo'>0</p></div>
-<div><p class='skillTitle'>Skill Frame Data:</p> <p id='friendData'>None Selected</p></div>
-</div>
-
-</div>
 <button id='clearAll'>Clear All</button>
 <div id='displayed'> <!-- each frame will be represented by 3 pixels -->
-<span id='bottom'></span>
-<span class='tall' id='start'></span>
-<span class='tall' id='end'></span>
-<span class='short' id='second1'></span>
-<span class='short' id='second2'></span>
-<span class='short' id='second3'></span>
-<span class='short' id='second4'></span>
-<span class='short' id='second5'></span>
-<span class='short' id='second6'></span>
-<span class='short' id='second7'></span>
-<span class='short' id='second8'></span>
-<span class='short' id='second9'></span>
-<p class='axisLabel' id='frame0'>Frame 0</p>
-<p class='axisLabel' id='frame30'>Frame 30</p>
-<p class='axisLabel' id='frame60'>Frame 60</p>
-<p class='axisLabel' id='frame90'>Frame 90</p>
-<p class='axisLabel' id='frame120'>Frame 120</p>
-<p class='axisLabel' id='frame150'>Frame 150</p>
-<p class='axisLabel' id='frame180'>Frame 180</p>
-<p class='axisLabel' id='frame210'>Frame 210</p>
-<p class='axisLabel' id='frame240'>Frame 240</p>
-<p class='axisLabel' id='frame270'>Frame 270</p>
-<p class='axisLabel' id='frame300'>Frame 300</p>
-<div id='charHits'></div>
+    <span id='bottom'></span>
+    <span class='tall' id='start'></span>
+    <span class='tall' id='end'></span>
+    <span class='short' id='second1'></span>
+    <span class='short' id='second2'></span>
+    <span class='short' id='second3'></span>
+    <span class='short' id='second4'></span>
+    <span class='short' id='second5'></span>
+    <span class='short' id='second6'></span>
+    <span class='short' id='second7'></span>
+    <span class='short' id='second8'></span>
+    <span class='short' id='second9'></span>
+    <p class='axisLabel' id='frame0'>Frame 0</p>
+    <p class='axisLabel' id='frame30'>Frame 30</p>
+    <p class='axisLabel' id='frame60'>Frame 60</p>
+    <p class='axisLabel' id='frame90'>Frame 90</p>
+    <p class='axisLabel' id='frame120'>Frame 120</p>
+    <p class='axisLabel' id='frame150'>Frame 150</p>
+    <p class='axisLabel' id='frame180'>Frame 180</p>
+    <p class='axisLabel' id='frame210'>Frame 210</p>
+    <p class='axisLabel' id='frame240'>Frame 240</p>
+    <p class='axisLabel' id='frame270'>Frame 270</p>
+    <p class='axisLabel' id='frame300'>Frame 300</p>
+    <div id='charHits'></div>
 </div>
 <div id='maxChain'>Current maximum chain:<span id='maxNum'></span></div>
 
 <div id='macroGen'>
-<div><button onclick='generateMemu()' class='macroButton'>Generate MEMu Macro</button><input type='text' value='1280' class='macro' id='macroWidth'><input type='text' value='720' class='macro' id='macroHeight'><button onclick='generateNox()' class='macroButton'>Generate NOX Macro</button></div>
-<div><span id='widthSpan'>Width</span><span id='heightSpan'>Height</span></div>
-<textarea id='macros'></textarea>
+    <div><button onclick='generateMemu()' class='macroButton'>Generate MEMu Macro</button><input type='text' value='1280' class='macro' id='macroWidth'><input type='text' value='720' class='macro' id='macroHeight'><button onclick='generateNox()' class='macroButton'>Generate NOX Macro</button></div>
+    <div><span id='widthSpan'>Width</span><span id='heightSpan'>Height</span></div>
+    <textarea id='macros'></textarea>
+</div>
+
+<div id='saveLoad'>
+    <button id='save1'>Save Slot 1</button> <button id='load1'>Load Slot 1</button>
+    <button id='save2'>Save Slot 2</button> <button id='load2'>Load Slot 2</button>
+    <button id='save3'>Save Slot 3</button> <button id='load3'>Load Slot 3</button>
+    <textarea id='hashCode'></textarea>
+    <button id='generateHash' onclick='generateHashCode()'>Generate Shareable Code</button>
+    <button id='loadHash' onclick='loadHashCode()'>Load Shareable Code</button>
 </div>
 
 <script src="js/libraries.js"></script>
 <script src="js/iife.js"></script>
 <script src="js/app.js"></script>
-<script src="skills.js"></script>
-<script src="units.js"></script>
-<script src="update_script.js"></script>
 
 </body>
 </html>
