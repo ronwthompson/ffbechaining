@@ -406,6 +406,10 @@ function generateNox () {
 	}
 }
 
+function makeHashClick(){
+	document.getElementById('hashCode').value = generateHashCode()
+}
+
 function generateHashCode(){
 	let codeToHash = ''
 	codeToHash += char1Select.value+'!'+char1Ability.value+'!'+char1Delay.value+'!'+char1Dual.checked+'!'
@@ -414,19 +418,47 @@ function generateHashCode(){
 	codeToHash += char4Select.value+'!'+char4Ability.value+'!'+char4Delay.value+'!'+char4Dual.checked+'!'
 	codeToHash += char5Select.value+'!'+char5Ability.value+'!'+char5Delay.value+'!'+char5Dual.checked+'!'
 	codeToHash += friendSelect.value+'!'+friendAbility.value+'!'+friendDelay.value+'!'+friendDual.checked
-	document.getElementById('hashCode').value = btoa(codeToHash)
+	return btoa(codeToHash)
 }
 
-function loadHashCode(){
-	let decodedHash = atob(document.getElementById('hashCode').value)
+function loadHashClick(){
+	let success = true
+	let decodedHash
+	try{
+		decodedHash = atob(document.getElementById('hashCode').value)
+	} catch(e){
+		success = false
+	} finally{
+		if (success && testHash(decodedHash)){
+			loadHashCode(decodedHash)
+		} else {
+			document.getElementById('hashCode').value = "Invalid Hash Code!"
+		}
+	}
+}
+
+function testHash(hash){
+	let counterH = 0
+	for (let i = 0; i < hash.length; i++){
+		if (hash[i] == '!'){
+			counterH++
+		}
+	}
+	if (counterH == 23){
+		return true
+	} 
+	return false
+}
+
+function loadHashCode(hashCode){
 	let decodedArray = []
 	let tempValue = ''
-	for (let i = 0; i < decodedHash.length; i++){
-		if (decodedHash[i] == '!'){
+	for (let i = 0; i < hashCode.length; i++){
+		if (hashCode[i] == '!'){
 			decodedArray.push(tempValue)
 			tempValue = ''
 		} else {
-			tempValue += decodedHash[i]
+			tempValue += hashCode[i]
 		}
 	}
 	char1Select.value = decodedArray[0]
@@ -467,6 +499,34 @@ function loadHashCode(){
 	abilityChange.bind(char4Ability)()
 	abilityChange.bind(char5Ability)()
 	abilityChange.bind(friendAbility)()
+}
+
+var save1Click = document.getElementById('save1')
+save1Click.onclick = saveClick.bind(save1Click)
+
+var save2Click = document.getElementById('save2')
+save2Click.onclick = saveClick.bind(save2Click)
+
+var save3Click = document.getElementById('save3')
+save3Click.onclick = saveClick.bind(save3Click)
+
+var load1Click = document.getElementById('load1')
+load1Click.onclick = loadClick.bind(load1Click)
+
+var load2Click = document.getElementById('load2')
+load2Click.onclick = loadClick.bind(load2Click)
+
+var load3Click = document.getElementById('load3')
+load3Click.onclick = loadClick.bind(load3Click)
+
+function saveClick(){
+	localStorage.setItem(this.id, generateHashCode())
+}
+
+function loadClick(){
+	let loadKey = this.id[4]
+	let loadedHash = atob(localStorage.getItem('save'+loadKey))
+	loadHashCode(loadedHash)
 }
 
 //T3JsYW5kZWF1IURpdmluZSBSdWluYXRpb24hMTAhdHJ1ZSFWZXJpdGFzIG9mIHRoZSBEYXJrIURhcmsgUHVuaXNobWVudCExMyF0cnVlIU9uaW9uIEtuaWdodCFPbmlvbiBTbGljZSEzMCF0cnVlIUdpbGdhbWVzaCFUcmktQXR0YWNrITUwIXRydWUhQ3VwaWQgTHVuYSFDaGFpbnNhdyE0MCF0cnVlIUVkZ2FyIUNoYWluc2F3ITQ1IXRydWU=
